@@ -154,6 +154,7 @@ class Userenrollment extends DbModel
     public function createBehaviors(Behaviors $behaviors): void
     {
         $behaviors->add((new BoolCast(['enabled'])));
+        $behaviors->add((new BoolCast(['allow_password_reset'])));
         $behaviors->add(new MillisecondTimestamp(['etime']));
         $behaviors->add(new MillisecondTimestamp(['ctime']));
         $behaviors->add(new MillisecondTimestamp(['mtime']));

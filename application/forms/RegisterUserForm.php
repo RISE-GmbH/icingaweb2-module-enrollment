@@ -148,10 +148,10 @@ class RegisterUserForm extends Form
             $user->enabled='n';
             $this->setRedirectUrl(Url::fromPath('enrollment/register/message',['success'=>1]));
         }elseif($user->allow_password_reset){
-            $this->userBackend->update($this->userBackend->getBaseTable(), ['password'=>$password],['name = ?' => $user->name]);
+            $this->userBackend->update($this->userBackend->getBaseTable(), ['password'=>$password], \Icinga\Data\Filter\Filter::where('name', $user->name));
             $user->status=99;
             $user->enabled='n';
-            $this->setRedirectUrl(Url::fromPath('enrollment/register/message',['success'=>1]));
+            $this->setRedirectUrl(Url::fromPath('enrollment/register/message',['success'=>3]));
         }else{
             $user->status=10;
             $user->enabled='n';

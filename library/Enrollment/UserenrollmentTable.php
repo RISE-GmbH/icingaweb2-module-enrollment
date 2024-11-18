@@ -39,7 +39,7 @@ class UserenrollmentTable extends DataTable
                     $columns[$column."_text"] = [
                         'label'  => $options['label']??$column,
                         'column' => function ($data) use ($column) {
-                            return $data->{$column}?("Yes"):t("No");
+                            return $data->{$column}?t("Yes"):t("No");
                         }
                     ];
                 }elseif ($fieldtype === "localDateTime" ){
