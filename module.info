@@ -1,0 +1,5 @@
+Name: enrollment
+Version: 0.1.0
+
+Description: enrollment
+ This module provides the ability to enroll users by url/email.
